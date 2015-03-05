@@ -1,5 +1,6 @@
 package org.usfirst.frc.team245.robot;
 
+import Auton.PushForward;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Victor;
@@ -14,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 
 public class Robot extends IterativeRobot {
+	private static final String AUTON_MODE_SELECTOR_INPUT = "Auton Mode selector input";
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -44,7 +46,9 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		// TODO Auto-generated method stub
 		super.autonomousInit();
-
+		PushForward.iterator = 0;
+		Auton.Containor.iterator=0;
+		Auton.PushForward.iterator = 0;
 	}
 
 	@Override
@@ -54,10 +58,16 @@ public class Robot extends IterativeRobot {
 
 		// Only one of the two is called, eventually smartdash will decide
 		// LandmarkPlacement.update();
-
-		 Auton.Test.update();
+		
+			//Auton.PushForward.update();
+		
+		
+			Auton.Containor.update();
+		
+		//Auton.Containor.update();
+		 SmartDashboard.putNumber("auton iterator", PushForward.iterator);
 	}
-
+	
 	/**
 	 * This function is called periodically during operator control
 	 */
@@ -91,13 +101,18 @@ public class Robot extends IterativeRobot {
 	public void testPeriodic() {
 
 	}
-
+	@Override
+	public void disabledInit() {
+		// TODO Auto-generated method stub
+		super.disabledInit();
+		
+	}
 	@Override
 	public void disabledPeriodic() {
 		// TODO Auto-generated method stub
 		super.disabledPeriodic();
-		/*autonMode = SmartDashboard.getNumber("Auton Mode selector", -1);
-		SmartDashboard.putString("Writing x", Drive.Drive.xValues.toString());
+		
+		/*SmartDashboard.putString("Writing x", Drive.Drive.xValues.toString());
 		SmartDashboard.putString("Writing y", Drive.Drive.yValues.toString());
 		SmartDashboard.putString("Writing z",
 				Drive.Drive.rotationValues.toString());
@@ -110,6 +125,11 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putString("Writing y", Drive.Drive.yAxis.toString());
 		SmartDashboard.putString("Writing rotation",
 				Drive.Drive.rotationAxis.toString());
+		SmartDashboard.putString("Writing interiorSpeed", Interior.Interior.interiorSpeed.toString());
+		SmartDashboard.putString("interior ratchet", Interior.Interior.interiorRatchet.toString());
+		SmartDashboard.putString("interior clamp", Interior.Interior.interiorClamp.toString());
+		SmartDashboard.putString("exterior speed", Exterior.Exterior.exteriorSpeed.toString());
+		SmartDashboard.putString("exterior clamp", Exterior.Exterior.exteriorClamp.toString());
 		Drive.Drive.MAX_ACCEL=SmartDashboard.getNumber("Max acceleration input", .05);
 	}
 

@@ -52,7 +52,7 @@ public class Teleop {
 	public static void exterior() {
 		
 		
-		Exterior.Exterior.moveArm(-.5 * Gamepad.secondary.getRightY());
+		Exterior.Exterior.moveArm(Gamepad.secondary.getRightY());
 		if (Gamepad.secondary.getTriggers()<-.3) {
 			Exterior.Exterior.setClamps(false);
 			SmartDashboard.putBoolean("external clamp", false);
@@ -102,16 +102,16 @@ public class Teleop {
 			Interior.Interior.overide=false;
 		}
 		if (Gamepad.primary.getA()||Gamepad.primary.getRB()) {
-			Interior.Interior.toggleRollers(-.5, .5);
+			Interior.Interior.toggleRollers(.5, -.5);
 		}
 		else if (Gamepad.primary.getX()) {
-			Interior.Interior.toggleRollers(-.5, 0);
+			Interior.Interior.toggleRollers(.5, 0);
 		}
 		else if (Gamepad.primary.getB()) {
-			Interior.Interior.toggleRollers(0, .5);
+			Interior.Interior.toggleRollers(0, -.5);
 		}
 		else if(Gamepad.primary.getY()){
-			Interior.Interior.toggleRollers(.5, -.5);
+			Interior.Interior.toggleRollers(-.5, .5);
 		}
 		else{
 			Interior.Interior.toggleRollers(0, 0);

@@ -1,5 +1,7 @@
 package Interior;
 
+import java.util.ArrayList;
+
 import org.usfirst.frc.team245.robot.SensorsAndActuators;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -9,7 +11,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Interior {
-	private static double INTERIOR_ENCODER_MAX = 1000; // needs to be tested
+	private static double INTERIOR_ENCODER_MAX =1650; // needs to be tested
 	private static double INTERIOR_ENCODER_MIN = 0;
 	private static double TOTE_ENCODER_HEIGHT = 100;
 	private static double MAX_AMPS = 2;
@@ -29,6 +31,9 @@ public class Interior {
 	private static int intakeStage = 0;
 	private static int outputStage = 0;
 	public static boolean overide = false;
+	public static ArrayList<Double> interiorSpeed= new ArrayList();
+	public static ArrayList<Boolean> interiorClamp = new ArrayList();
+	public static ArrayList<Boolean> interiorRatchet = new ArrayList();
 	public static void toggleRollers(double leftSpeed, double rightSpeed) { // 1
 																			// =
 																			// in,
@@ -53,7 +58,8 @@ public class Interior {
 		// SensorsAndActuators.interiorLiftMotor.set(speed);
 		if (speed > 0) {
 			if ((getCurrentEncoder() <= INTERIOR_ENCODER_MAX
-					&& !SensorsAndActuators.interiorTopLimit.get())||overide) {// &&not
+					&& !SensorsAndActuators.interiorTopLimit.get())||overide||
+					!SensorsAndActuators.interiorTopLimit.get()) {// &&not
 																		// the
 																		// top
 																		// limit
@@ -64,7 +70,8 @@ public class Interior {
 			}
 		} else {
 			if ((getCurrentEncoder() >= 0
-					&& !SensorsAndActuators.interiorBottomLimit.get())||overide) {
+					&& !SensorsAndActuators.interiorBottomLimit.get())||overide||
+					!SensorsAndActuators.interiorBottomLimit.get()) {
 				SensorsAndActuators.interiorLiftMotor.set(speed);
 				SmartDashboard.putString("STUFF IS OK!", "SUPPOSE TO MOVE DOWN");
 			} else {
@@ -72,6 +79,7 @@ public class Interior {
 				SmartDashboard.putString("STUFF IS OK!", "SUPPOSE TO STOP");
 			}
 		}
+		interiorSpeed.add(speed);
 		SmartDashboard.putBoolean("top limit", SensorsAndActuators.interiorTopLimit.get());
 		SmartDashboard.putBoolean("bottom limit", SensorsAndActuators.interiorBottomLimit.get());
 		SmartDashboard.putNumber("encoder value", SensorsAndActuators.interiorManipulator.get());
@@ -88,6 +96,7 @@ public class Interior {
 			// close Arms
 			SensorsAndActuators.ratchetPiston.set(false);
 		}
+		interiorRatchet.add(isCompressed);
 	}
 
 	// clamps using the piston
@@ -109,6 +118,7 @@ public class Interior {
 			SensorsAndActuators.internalToteClamp
 					.set(DoubleSolenoid.Value.kReverse);
 		}
+		interiorClamp.add(isCompressed);
 	}
 
 	public static void currentCheck() { // each iteration = 20 milliseconds

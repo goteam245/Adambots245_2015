@@ -1,5 +1,7 @@
 package Exterior;
 
+import java.util.ArrayList;
+
 import org.usfirst.frc.team245.robot.SensorsAndActuators;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -13,13 +15,15 @@ public class Exterior {
 	private static DoubleSolenoid.Value solenoidForward = DoubleSolenoid.Value.kForward;
 	private static DoubleSolenoid.Value solenoidReverse = DoubleSolenoid.Value.kReverse;
 	public static boolean overide = false;
+	public static ArrayList<Double> exteriorSpeed= new ArrayList();
+	public static ArrayList<Boolean> exteriorClamp = new ArrayList();
 	public static void setClamps(boolean setClamps) {
 		if (setClamps) {
 			SensorsAndActuators.exteriorArmPiston.set(solenoidForward);
 		} else {
 			SensorsAndActuators.exteriorArmPiston.set(solenoidReverse);
 		}
-		
+		exteriorClamp.add(setClamps);
 	}
 
 	public static void moveArm(double speed) {
@@ -46,7 +50,7 @@ public class Exterior {
 			// TODO SensorsAndActuators.liftBrake.set(true);
 			SensorsAndActuators.exteriorLiftMotor.set(0);
 		}*/
-		SensorsAndActuators.exteriorLiftMotor.set(-speed);
+		SensorsAndActuators.exteriorLiftMotor.set(speed);
 		/*SmartDashboard.putNumber("Encoder Value",
 				SensorsAndActuators.exteriorManipulator.getDistance());
 		SmartDashboard.putBoolean("Exterior Top Limit",
@@ -55,6 +59,7 @@ public class Exterior {
 				SensorsAndActuators.exteriorBottomLimit.get());*/
 		SmartDashboard.putNumber("Encoder Value",
 				SensorsAndActuators.exteriorManipulator.get());
+		exteriorSpeed.add(speed);
 	}
 
 	
