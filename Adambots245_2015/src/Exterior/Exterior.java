@@ -27,36 +27,38 @@ public class Exterior {
 	}
 
 	public static void moveArm(double speed) {
+		
+		// WARNING - negative speed is up, postive speed is down <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		SmartDashboard.putNumber("arm speed", speed);
-		/*if (speed > 0) {
+		if (speed > 0) {
 			//SensorsAndActuators.liftBrake.set(false);
-			if ((SensorsAndActuators.exteriorManipulator.get() < ARM_ENCODER_MAX
-					&& !SensorsAndActuators.exteriorTopLimit.get())||overide) {
-				SmartDashboard.putNumber("DEBUG MOVEARM CASE 1",
-						SensorsAndActuators.exteriorManipulator.get());
+			//if ((SensorsAndActuators.exteriorManipulator.get() < ARM_ENCODER_MAX
+					//&& !SensorsAndActuators.exteriorTopLimit.get())||overide||!SensorsAndActuators.exteriorTopLimit.get()) {
+			if (overide||!SensorsAndActuators.exteriorBottomLimit.get()) {
 				SensorsAndActuators.exteriorLiftMotor.set(speed);
+			 
 			} else {
 				SensorsAndActuators.exteriorLiftMotor.set(0);
 			}
-		} else if (speed < 0) {
+		} 
+		else if (speed < 0) {
 			//SensorsAndActuators.liftBrake.set(false);
-			if ((SensorsAndActuators.exteriorManipulator.get() >= -5
-					&& !SensorsAndActuators.exteriorBottomLimit.get())||overide) {
+			//if (overide) {
 				SensorsAndActuators.exteriorLiftMotor.set(speed);
-			} else {
-				SensorsAndActuators.exteriorLiftMotor.set(0);
-			}
+//			} else {
+//				SensorsAndActuators.exteriorLiftMotor.set(0);
+//			}
 		} else {
 			// TODO SensorsAndActuators.liftBrake.set(true);
 			SensorsAndActuators.exteriorLiftMotor.set(0);
-		}*/
-		SensorsAndActuators.exteriorLiftMotor.set(speed);
-		/*SmartDashboard.putNumber("Encoder Value",
-				SensorsAndActuators.exteriorManipulator.getDistance());
+		}
+		//SensorsAndActuators.exteriorLiftMotor.set(speed);
+		//SmartDashboard.putNumber("Encoder Value",
+			//	SensorsAndActuators.exteriorManipulator.getDistance());
 		SmartDashboard.putBoolean("Exterior Top Limit",
 				SensorsAndActuators.exteriorTopLimit.get());
 		SmartDashboard.putBoolean("Exterior Bottom Limit",
-				SensorsAndActuators.exteriorBottomLimit.get());*/
+				SensorsAndActuators.exteriorBottomLimit.get());
 		SmartDashboard.putNumber("Encoder Value",
 				SensorsAndActuators.exteriorManipulator.get());
 		exteriorSpeed.add(speed);

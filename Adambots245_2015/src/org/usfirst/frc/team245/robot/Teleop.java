@@ -14,7 +14,7 @@ public class Teleop {
 	public static boolean interiorLift = false;
 	public static boolean placeTotes = false;
 	public static boolean oldMode = true;
-
+	private static boolean camerasEnabled = false;
 	/*
 	 * public static File file = new File("GhostMode.txt"); public static
 	 * FileWriter f;
@@ -29,14 +29,16 @@ public class Teleop {
 
 		// interior
 		interior();
+		if(camerasEnabled){
 		if(Gamepad.secondary.getTriggers()>.3){
 			Cameras.setSession(Cameras.session0);
 		}
 		else{
-			Cameras.setSession(Cameras.session1);
+			Cameras.setSession(Cameras.session0);
 		}
 		Cameras.updateCamera();
 	}
+	}		
 
 	public static void drive() {
 		Drive.Drive.senseMode = oldMode;
@@ -88,7 +90,7 @@ public class Teleop {
 		if (interiorLift) {
 			placeTotes = !Interior.Interior.placeTotes();
 		}*/
-		Interior.Interior.moveArm(-.5 * Gamepad.secondary.getLeftY());
+		Interior.Interior.moveArm(-.75 * Gamepad.secondary.getLeftY());
 		if(Gamepad.secondary.getA()){
 			Interior.Interior.toggleClamps(true);
 		}
@@ -102,7 +104,7 @@ public class Teleop {
 			Interior.Interior.overide=false;
 		}
 		if (Gamepad.primary.getA()||Gamepad.primary.getRB()) {
-			Interior.Interior.toggleRollers(.5, -.5);
+			Interior.Interior.toggleRollers(1, -1);
 		}
 		else if (Gamepad.primary.getX()) {
 			Interior.Interior.toggleRollers(.5, 0);

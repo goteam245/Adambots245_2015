@@ -103,21 +103,21 @@ public class Interior {
 	public static void toggleRollers(boolean isCompressed) {
 		if (isCompressed) { // currently closed
 			// open Arms
-			SensorsAndActuators.rollerPiston.set(false);
+			SensorsAndActuators.rollerPiston.set(DoubleSolenoid.Value.kForward);;
 		} else { // currently open
 			// close Arms
-			SensorsAndActuators.rollerPiston.set(true);
+			SensorsAndActuators.rollerPiston.set(DoubleSolenoid.Value.kReverse);
 		}
 	}
 
 	public static void toggleClamps(boolean isCompressed) {
-		if (isCompressed) {
+		/*if (isCompressed) {
 			SensorsAndActuators.internalToteClamp
 					.set(DoubleSolenoid.Value.kForward);
 		} else {
 			SensorsAndActuators.internalToteClamp
 					.set(DoubleSolenoid.Value.kReverse);
-		}
+		*/
 		interiorClamp.add(isCompressed);
 	}
 
@@ -248,6 +248,12 @@ public class Interior {
 			return true;
 		}
 		return false;
+	}
+	
+	public static boolean isToteIn(){
+		boolean isToteIn =  !SensorsAndActuators.photoEyeInternal.get();
+		SmartDashboard.putBoolean("IS TOTE IN INTERNAL?", isToteIn);
+		return isToteIn;		
 	}
 
 }
