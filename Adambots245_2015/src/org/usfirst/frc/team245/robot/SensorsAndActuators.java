@@ -39,7 +39,8 @@ public final class SensorsAndActuators {
 	public static Solenoid ratchetPiston;
 	public static Solenoid liftBrake;
 	public static Solenoid angleBrake;
-
+	public static Solenoid lights1;
+	public static Solenoid lights2;
 	// OTHER
 	public static PowerDistributionPanel currentPDP;
 
@@ -81,7 +82,8 @@ public final class SensorsAndActuators {
 		//angleBrake = new Solenoid(7);
 		 rollerPiston = new DoubleSolenoid(0,1);
 		 ratchetPiston = new Solenoid(2);
-
+		 lights1 = new Solenoid(6);
+		 lights2 = new Solenoid(7);
 		compressor = new Compressor();
 		currentPDP = new PowerDistributionPanel();
 	}

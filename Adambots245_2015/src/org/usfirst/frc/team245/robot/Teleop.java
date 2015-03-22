@@ -103,7 +103,10 @@ public class Teleop {
 		else{
 			Interior.Interior.overide=false;
 		}
-		if (Gamepad.primary.getA()||Gamepad.primary.getRB()) {
+		if (Gamepad.primary.getA()) {
+			Interior.Interior.toggleRollers(.25, -.25);
+		}
+		else if(Gamepad.primary.getRB()){
 			Interior.Interior.toggleRollers(1, -1);
 		}
 		else if (Gamepad.primary.getX()) {
