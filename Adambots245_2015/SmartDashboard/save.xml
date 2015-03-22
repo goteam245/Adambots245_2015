@@ -123,7 +123,7 @@
 		<location x="0" y="0"/>
 	</widget>
 	<widget field="encoder d" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="346"/>
+		<location x="0" y="347"/>
 	</widget>
 </dashboard>
 <live-window>
