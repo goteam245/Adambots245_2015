@@ -29,15 +29,14 @@ public class Teleop {
 
 		// interior
 		interior();
-		if(camerasEnabled){
+		/*if(camerasEnabled){
 		if(Gamepad.secondary.getTriggers()>.3){
 			Cameras.setSession(Cameras.session0);
 		}
 		else{
 			Cameras.setSession(Cameras.session0);
 		}
-		Cameras.updateCamera();
-	}
+		Cameras.updateCamera();*/
 	}		
 
 	public static void drive() {
@@ -67,14 +66,14 @@ public class Teleop {
 		else{
 			Exterior.Exterior.overide=false;
 		}
-		if (Gamepad.secondary.getY()) {
-			exteriorLockAndLift = true;
-			Exterior.Exterior.clampAndRiseInit();
-		}
-		if (exteriorLockAndLift) {
-			SmartDashboard.putBoolean("exterior lock and lift", exteriorLockAndLift);
-			exteriorLockAndLift = !Exterior.Exterior.clampAndRise();
-		}
+		//if (Gamepad.secondary.getY()) {
+			//exteriorLockAndLift = true;
+			//Exterior.Exterior.clampAndRiseInit();
+		//}
+		//if (exteriorLockAndLift) {
+			//SmartDashboard.putBoolean("exterior lock and lift", exteriorLockAndLift);
+			//exteriorLockAndLift = !Exterior.Exterior.clampAndRise();
+		//}
 	}
 
 	public static void interior() {
@@ -104,19 +103,19 @@ public class Teleop {
 			Interior.Interior.overide=false;
 		}
 		if (Gamepad.primary.getA()) {
-			Interior.Interior.toggleRollers(.25, -.25);
+			Interior.Interior.toggleRollers(-.25, .25);
 		}
 		else if(Gamepad.primary.getRB()){
-			Interior.Interior.toggleRollers(1, -1);
+			Interior.Interior.toggleRollers(-1, 1);
 		}
 		else if (Gamepad.primary.getX()) {
-			Interior.Interior.toggleRollers(.5, 0);
+			Interior.Interior.toggleRollers(-.5, 0);
 		}
 		else if (Gamepad.primary.getB()) {
-			Interior.Interior.toggleRollers(0, -.5);
+			Interior.Interior.toggleRollers(0, .5);
 		}
 		else if(Gamepad.primary.getY()){
-			Interior.Interior.toggleRollers(-.5, .5);
+			Interior.Interior.toggleRollers(.5, -.5);
 		}
 		else{
 			Interior.Interior.toggleRollers(0, 0);
@@ -127,12 +126,12 @@ public class Teleop {
 		else{
 			Interior.Interior.toggleRollers(false);
 		}
-		if(Gamepad.secondary.getX()){
+		/*if(Gamepad.secondary.getX()){
 			Interior.Interior.toggleRatchet(true);
 		}
 		else{
 			Interior.Interior.toggleRatchet(false);
-		}
+		}*/
 		
 	}
 

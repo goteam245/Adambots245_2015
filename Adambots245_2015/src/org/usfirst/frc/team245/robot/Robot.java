@@ -57,7 +57,7 @@ public class Robot extends IterativeRobot {
 		PushForward.iterator = 0;
 		Auton.Containor.iterator = 0;
 		Auton.PushForward.iterator = 0;
-		Auton.NaynaysLadder.iterator=0;
+		Auton.ContainorRampV1.iterator=0;
 		Auton.ContainorRampV2.iterator=0;
 		autonMode = Auton.AutonConfig.getAutonMode();
 
@@ -71,12 +71,14 @@ public class Robot extends IterativeRobot {
 		// Only one of the two is called, eventually smartdash will decide
 		// LandmarkPlacement.update();
 		try{
-		if (autonMode == 0)
-			Auton.PushForward.update();
-		else if (autonMode == 1)
+		if (autonMode == 0){
+			Auton.Containor.iterator= 999999;
 			Auton.Containor.update();
-		else if(autonMode == 2)
-			Auton.NaynaysLadder.update();
+		}
+		else if (autonMode == 1)
+			Auton.PushForward.update();
+		else if (autonMode == 2)
+			Auton.Containor.update();
 		else if(autonMode ==3)
 			Auton.ContainorRampV2.update();
 		}
