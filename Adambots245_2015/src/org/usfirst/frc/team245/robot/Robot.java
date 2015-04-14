@@ -57,8 +57,10 @@ public class Robot extends IterativeRobot {
 		PushForward.iterator = 0;
 		Auton.Containor.iterator = 0;
 		Auton.PushForward.iterator = 0;
-		Auton.ContainorRampV1.iterator=0;
+		Auton.NaynaysLadder.iterator=0;
 		Auton.ContainorRampV2.iterator=0;
+		Auton.ClaspContainor.iterator=0;
+		Auton.ContainorV3.iterator=0;
 		autonMode = Auton.AutonConfig.getAutonMode();
 
 	}
@@ -72,15 +74,19 @@ public class Robot extends IterativeRobot {
 		// LandmarkPlacement.update();
 		try{
 		if (autonMode == 0){
-			Auton.Containor.iterator= 999999;
-			Auton.Containor.update();
-		}
-		else if (autonMode == 1)
 			Auton.PushForward.update();
-		else if (autonMode == 2)
+		}else if (autonMode == 1){
 			Auton.Containor.update();
-		else if(autonMode ==3)
+		}else if(autonMode == 2){
+			Auton.NaynaysLadder.update();
+		}else if(autonMode ==3){
 			Auton.ContainorRampV2.update();
+		}else if(autonMode ==4){
+			Auton.ClaspContainor.update();
+		}	
+		else if(autonMode ==5){
+			Auton.ContainorV3.update();
+		}
 		}
 		catch(Exception e){
 			

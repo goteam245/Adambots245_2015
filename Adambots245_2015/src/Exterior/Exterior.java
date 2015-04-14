@@ -34,23 +34,20 @@ public class Exterior {
 			//SensorsAndActuators.liftBrake.set(false);
 			//if ((SensorsAndActuators.exteriorManipulator.get() < ARM_ENCODER_MAX
 					//&& !SensorsAndActuators.exteriorTopLimit.get())||overide||!SensorsAndActuators.exteriorTopLimit.get()) {
-// ??? commmented out limit sw, not working			if (overide||!SensorsAndActuators.exteriorBottomLimit.get()) {
-			if (overide||!SensorsAndActuators.exteriorBottomLimit.get()) {
-				SensorsAndActuators.exteriorLiftMotor.set(speed);
-			} else {
-				SensorsAndActuators.exteriorLiftMotor.set(0);
-			}	
-			
-		} 
-		else if (speed < 0) {
-			//SensorsAndActuators.liftBrake.set(false);
-			if ( true ) {
+if (overide||!SensorsAndActuators.exteriorBottomLimit.get()) {
 				SensorsAndActuators.exteriorLiftMotor.set(speed);
 			 
 			} else {
 				SensorsAndActuators.exteriorLiftMotor.set(0);
 			}
-			
+		} 
+		else if (speed < 0) {
+			//SensorsAndActuators.liftBrake.set(false);
+			//if (overide) {
+				SensorsAndActuators.exteriorLiftMotor.set(speed);
+//			} else {
+//				SensorsAndActuators.exteriorLiftMotor.set(0);
+//			}
 		} else {
 			// TODO SensorsAndActuators.liftBrake.set(true);
 			SensorsAndActuators.exteriorLiftMotor.set(0);

@@ -89,7 +89,7 @@ public class Teleop {
 		if (interiorLift) {
 			placeTotes = !Interior.Interior.placeTotes();
 		}*/
-		Interior.Interior.moveArm(-.75 * Gamepad.secondary.getLeftY());
+		Interior.Interior.moveArm(-1 * Gamepad.secondary.getLeftY());
 		if(Gamepad.secondary.getA()){
 			Interior.Interior.toggleClamps(true);
 		}
@@ -103,19 +103,19 @@ public class Teleop {
 			Interior.Interior.overide=false;
 		}
 		if (Gamepad.primary.getA()) {
-			Interior.Interior.toggleRollers(-.25, .25);
+			Interior.Interior.toggleRollers(.25, -.25);
 		}
 		else if(Gamepad.primary.getRB()){
-			Interior.Interior.toggleRollers(-1, 1);
+			Interior.Interior.toggleRollers(1, -1);
 		}
 		else if (Gamepad.primary.getX()) {
-			Interior.Interior.toggleRollers(-.5, 0);
+			Interior.Interior.toggleRollers(.5, 0);
 		}
 		else if (Gamepad.primary.getB()) {
-			Interior.Interior.toggleRollers(0, .5);
+			Interior.Interior.toggleRollers(0, -.5);
 		}
 		else if(Gamepad.primary.getY()){
-			Interior.Interior.toggleRollers(.5, -.5);
+			Interior.Interior.toggleRollers(-.5, .5);
 		}
 		else{
 			Interior.Interior.toggleRollers(0, 0);
