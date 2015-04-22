@@ -1,129 +1,125 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="Encoder Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="472"/>
-	</widget>
-	<widget field="right speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="451"/>
-	</widget>
 	<widget field="Periodic time" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="430"/>
+		<location x="642" y="320"/>
 	</widget>
-	<widget field="left speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="409"/>
-	</widget>
-	<widget field="speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="252"/>
-	</widget>
-	<widget field="IS TOTE IN INTERNAL?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="617" y="62"/>
-		<width>725</width>
-		<height>265</height>
-	</widget>
-	<widget field="Exterior Bottom Limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="343" y="406"/>
-	</widget>
-	<widget field="Exterior Top Limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="317" y="84"/>
-	</widget>
-	<widget field="Actual Auton Mode (from config file)" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="334" y="291"/>
-	</widget>
-	<widget field="Intended Auton Mode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="338" y="267"/>
-	</widget>
-	<widget field="autonCfg iter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="338" y="459"/>
-	</widget>
-	<widget field="exterior motor value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="321" y="21"/>
-	</widget>
-	<widget field="exterior clamp" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="162" y="84"/>
-	</widget>
-	<widget field="exterior speed" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="162" y="63"/>
-	</widget>
-	<widget field="interior clamp" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="162" y="42"/>
-	</widget>
-	<widget field="interior ratchet" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="162" y="21"/>
-	</widget>
-	<widget field="Writing interiorSpeed" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="316" y="0"/>
-	</widget>
-	<widget field="auton iterator" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="162" y="0"/>
-	</widget>
-	<widget field="Auton Mode selected" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="651"/>
+	<widget field="DYAMIC CAMERA" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="549"/>
 	</widget>
 	<widget field="external clamp" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="630"/>
-	</widget>
-	<widget field="the line number exception was" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="609"/>
-	</widget>
-	<widget field="the class of the exception was" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="588"/>
-	</widget>
-	<widget field="the exception was:" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="567"/>
-	</widget>
-	<widget field="encoder distnce value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="388"/>
-	</widget>
-	<widget field="encoder value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="367"/>
-	</widget>
-	<widget field="bottom limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="315"/>
-	</widget>
-	<widget field="top limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="294"/>
+		<location x="0" y="460"/>
 	</widget>
 	<widget field="STUFF IS OK!" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="276"/>
-	</widget>
-	<widget field="arm speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="231"/>
-	</widget>
-	<widget field="rotation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="210"/>
-	</widget>
-	<widget field="out y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="189"/>
-	</widget>
-	<widget field="out x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="168"/>
-	</widget>
-	<widget field="sensitivity mode:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="147"/>
-	</widget>
-	<widget field="max accel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="126"/>
-	</widget>
-	<widget field="in y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="105"/>
-	</widget>
-	<widget field="in x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="84"/>
+		<location x="0" y="528"/>
 	</widget>
 	<widget field="Init Completed" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="63"/>
+		<location x="0" y="507"/>
+	</widget>
+	<widget field="CAMERA ENABLED" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="486"/>
+	</widget>
+	<widget field="autonCfg iter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1193" y="6"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.WebcamViewerExtensionCompat">
+		<location x="6" y="2"/>
+		<width>635</width>
+		<height>456</height>
+	</static-widget>
+	<widget field="Exterior Bottom Limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="994" y="474"/>
+		<width>128</width>
+		<height>46</height>
+	</widget>
+	<widget field="IS TOTE IN INTERNAL?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="659" y="7"/>
+		<width>496</width>
+		<height>312</height>
+	</widget>
+	<widget field="Exterior Top Limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="274" y="631"/>
+	</widget>
+	<widget field="Actual Auton Mode (from config file)" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1068" y="441"/>
+	</widget>
+	<widget field="Intended Auton Mode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1138" y="468"/>
+	</widget>
+	<widget field="interior clamp" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1191" y="606"/>
+	</widget>
+	<widget field="exterior clamp" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="385" y="581"/>
+	</widget>
+	<widget field="interior ratchet" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="985" y="579"/>
+	</widget>
+	<widget field="exterior speed" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1173" y="540"/>
+	</widget>
+	<widget field="Writing interiorSpeed" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1065" y="632"/>
+	</widget>
+	<widget field="exterior motor value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1158" y="574"/>
+	</widget>
+	<widget field="right speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="10" y="611"/>
+	</widget>
+	<widget field="left speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="165" y="608"/>
+	</widget>
+	<widget field="speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="315" y="609"/>
+	</widget>
+	<widget field="encoder distnce value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="441" y="606"/>
+	</widget>
+	<widget field="encoder value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="109" y="632"/>
+	</widget>
+	<widget field="bottom limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="907" y="630"/>
+	</widget>
+	<widget field="top limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="777" y="625"/>
+	</widget>
+	<widget field="Encoder Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="466" y="629"/>
+	</widget>
+	<widget field="arm speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="633" y="624"/>
+		<height>21</height>
+	</widget>
+	<widget field="rotation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="641" y="604"/>
+	</widget>
+	<widget field="out y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="773" y="603"/>
+	</widget>
+	<widget field="out x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="889" y="603"/>
+	</widget>
+	<widget field="sensitivity mode:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1006" y="605"/>
+	</widget>
+	<widget field="max accel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="16" y="581"/>
+	</widget>
+	<widget field="in y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="164" y="581"/>
+	</widget>
+	<widget field="in x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="276" y="579"/>
 	</widget>
 	<widget field="Writing x" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="42"/>
+		<location x="540" y="582"/>
 	</widget>
 	<widget field="Writing y" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="21"/>
+		<location x="676" y="581"/>
 	</widget>
 	<widget field="Writing rotation" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="0"/>
-	</widget>
-	<widget field="encoder d" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="346"/>
+		<location x="814" y="583"/>
 	</widget>
 </dashboard>
 <live-window>

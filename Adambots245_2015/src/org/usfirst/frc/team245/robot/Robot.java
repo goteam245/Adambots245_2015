@@ -27,13 +27,14 @@ public class Robot extends IterativeRobot {
 	// private double autonMode = 0;
 	private double iteration = 0;
 	private boolean camerasEnabled = false;
-	// private Timer periodicTimer = new Timer();
+	 private Timer periodicTimer = new Timer();
+	 
 
 	@Override
 	public void robotInit() {
 		// periodicTimer.start();
 		// SensorsAndActuators.compressor.start();
-
+		SmartDashboard.putBoolean("CAMERA ENABLED", camerasEnabled);
 		SmartDashboard.putString("Init Completed", " ");
 		// Auton.LandmarkPlacement.init();
 		// SensorsAndActuators.initialize();
@@ -102,16 +103,17 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Interior.isToteIn();
+		//Cameras.disableCam();
+		//Cameras.setCamQuality();
 		try {
 			Teleop.doWerk();
-			/*
+			//Gamepad.secondary.rumble();
 			if (iteration == 0)
 				periodicTimer.start();
 			else {
 				SmartDashboard.putNumber("Periodic time", periodicTimer.get());
 				periodicTimer.reset();
 			}
-			*/
 			// Auton.Test.update();
 			// ControlsTest.update();
 			// SmartDashboard.putNumber("Halleffect encoder",
@@ -154,6 +156,7 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {
 		// TODO Auto-generated method stub
 		super.disabledPeriodic();
+		Gamepad.secondary.dontRumble();
 
 		/*
 		 * SmartDashboard.putString("Writing x",

@@ -2,6 +2,7 @@ package Interior;
 
 import java.util.ArrayList;
 
+import org.usfirst.frc.team245.robot.Gamepad;
 import org.usfirst.frc.team245.robot.SensorsAndActuators;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -259,15 +260,24 @@ public class Interior {
 	}
 
 	private static int i = 0;
-
+	static int rumble = 0;
 	public static boolean isToteIn() {
 		boolean isToteIn = !SensorsAndActuators.photoEyeInternal.get();
 		SmartDashboard.putBoolean("IS TOTE IN INTERNAL?", isToteIn);
+
 		if (isToteIn) {
 			i=0;
 			SensorsAndActuators.lights1.set(true);
 			SensorsAndActuators.lights2.set(true);
+			if(rumble<5){
+				Gamepad.secondary.rumble();
+				rumble ++;
+			}
+			else{
+				Gamepad.secondary.dontRumble();
+			}
 		}else{
+			Gamepad.secondary.dontRumble();
 			if(i%50<=25){
 				SensorsAndActuators.lights1.set(false);
 				SensorsAndActuators.lights2.set(false);
@@ -276,6 +286,7 @@ public class Interior {
 				SensorsAndActuators.lights2.set(true);
 			}
 			i++;
+			rumble = 0;
 		}
 		return isToteIn;
 	}

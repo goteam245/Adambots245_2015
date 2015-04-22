@@ -17,6 +17,8 @@ public class Exterior {
 	public static boolean overide = false;
 	public static ArrayList<Double> exteriorSpeed= new ArrayList();
 	public static ArrayList<Boolean> exteriorClamp = new ArrayList();
+	private static double pastArmSpeed=0;
+	private static double accelCap=0;
 	public static void setClamps(boolean setClamps) {
 		if (setClamps) {
 			SensorsAndActuators.exteriorArmPiston.set(solenoidForward);
@@ -30,6 +32,12 @@ public class Exterior {
 		
 		// WARNING - negative speed is up, postive speed is down <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		SmartDashboard.putNumber("arm speed", speed);
+//		if(speed>pastArmSpeed+accelCap){
+//			speed = pastArmSpeed +accelCap;
+//		}
+//		else if(speed<pastArmSpeed-accelCap){
+//			speed = pastArmSpeed-accelCap;
+//		}
 		if (speed > 0) {
 			//SensorsAndActuators.liftBrake.set(false);
 			//if ((SensorsAndActuators.exteriorManipulator.get() < ARM_ENCODER_MAX

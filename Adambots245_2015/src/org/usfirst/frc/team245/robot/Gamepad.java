@@ -202,4 +202,11 @@ public class Gamepad {
 	public boolean getBack() {
 		return joy.getRawButton(BUTTON_BACK);
 	}
+	public void rumble(){
+		joy.setRumble(Joystick.RumbleType.kLeftRumble, 1);
+		
+	}
+	public void dontRumble(){
+		joy.setRumble(Joystick.RumbleType.kLeftRumble, 0);
+	}
 }

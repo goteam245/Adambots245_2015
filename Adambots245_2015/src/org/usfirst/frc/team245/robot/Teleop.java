@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Teleop {
+	static int rumble = 0;
 	// get joystick values and call appropriate methods
 	// static Joystick joy = new Joystick(1);
 	public static boolean exteriorLockAndLift = false;
@@ -66,10 +67,22 @@ public class Teleop {
 		else{
 			Exterior.Exterior.overide=false;
 		}
-		//if (Gamepad.secondary.getY()) {
+		if(Gamepad.secondary.getY()) {
 			//exteriorLockAndLift = true;
 			//Exterior.Exterior.clampAndRiseInit();
-		//}
+			if(rumble<5){
+				Gamepad.secondary.rumble();
+				rumble ++;
+			}
+			else{
+				Gamepad.secondary.dontRumble();
+			}
+
+		}
+		else{
+			rumble = 0;
+			Gamepad.secondary.dontRumble();
+		}
 		//if (exteriorLockAndLift) {
 			//SmartDashboard.putBoolean("exterior lock and lift", exteriorLockAndLift);
 			//exteriorLockAndLift = !Exterior.Exterior.clampAndRise();
