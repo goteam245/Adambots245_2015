@@ -6,6 +6,7 @@ import com.ni.vision.NIVision.Image;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.vision.USBCamera;
 
 public class Cameras {
 	static int session0;
@@ -16,7 +17,9 @@ public class Cameras {
 	static CameraServer server;
 	private static Timer periodicTimer = new Timer();
 	private static double iteration = 0;
+	private static USBCamera camera;
 	private static double timerCapQuality = 0.4;
+	
 	public static void camInit() {
 //		session0 = NIVision.IMAQdxOpenCamera("cam1", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
 //     	//session1 = NIVision.IMAQdxOpenCamera("cam2", NIVision.IMAQdxCameraControlMode.CameraControlModeController);
@@ -26,9 +29,13 @@ public class Cameras {
 //		CameraServer.getInstance().setQuality(1);
 		server = CameraServer.getInstance();
         server.setQuality(1);
-        
-        //the camera name (ex "cam0") can be found through the roborio web interface
-        server.startAutomaticCapture("cam0");
+        camera = new USBCamera("cam1");
+        camera.setFPS(2);
+        camera.setSize(160, 120);
+        camera.updateSettings();
+        server.startAutomaticCapture(camera);
+        //the camera name (ex "camera") can be found through the roborio web interface
+        //server.startAutomaticCapture("camera");
         SmartDashboard.putBoolean("DYAMIC CAMERA", false);
         
 	}
@@ -58,11 +65,10 @@ public class Cameras {
 			server = CameraServer.getInstance();
         server.setQuality(50);
         
-        //the camera name (ex "cam0") can be found through the roborio web interface
-        server.startAutomaticCapture("cam2");
+        //the camera name (ex "camera") can be found through the roborio web interface
+        server.startAutomaticCapture(camera);
         i++;
-		}
-			
+		}	
 	}
 	public static void setSession(int newSession) {
 		if(newSession!=curSession){

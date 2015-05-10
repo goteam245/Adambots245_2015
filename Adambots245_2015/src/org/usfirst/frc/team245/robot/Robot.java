@@ -26,7 +26,7 @@ public class Robot extends IterativeRobot {
 
 	// private double autonMode = 0;
 	private double iteration = 0;
-	private boolean camerasEnabled = false;
+	private boolean camerasEnabled = true;
 	 private Timer periodicTimer = new Timer();
 	 
 
